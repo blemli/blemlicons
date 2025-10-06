@@ -12,7 +12,7 @@ module.exports = {
             minify: false   // do not rename/shorten ids
           }
         },
-        floatPrecision: 1
+        floatPrecision: 2
       }
     }
   ]

@@ -15,8 +15,8 @@ for (const file of readdirSync(iconsDir)) {
   const fullPath = path.join(iconsDir, file);
   const content = readFileSync(fullPath, 'utf8');
   const stats = statSync(fullPath);
-  if (stats.size > 3500) {
-    error(file, 'file too large (>3.5kb)');
+  if (stats.size > 3000) {
+    error(file, 'file too large (>3kB)');
   }
 
   if (!content.includes('viewBox="0 0 24 24"')) {
