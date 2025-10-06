@@ -1,19 +1,48 @@
 module.exports = {
-  multipass: true,
-  plugins: [
-    {
-      name: 'preset-default',
-      params: {
-        overrides: {
-          mergePaths: false, //keep the xml structure
-          collapseGroups: false,
-          cleanupIds: {
-            remove: false,  // do not delete unused ids
-            minify: false   // do not rename/shorten ids
-          }
+    multipass: true,
+    plugins: [
+        {
+            name: 'preset-default',
+            params: {
+                overrides: {
+                    mergePaths: false,
+                    collapseGroups: false,
+                    cleanupIds: {
+                        remove: false,
+                        minify: false,
+                    },
+                    convertPathData: { floatPrecision: 1 },
+                    cleanupNumericValues: { floatPrecision: 1 },
+                },
+            },
         },
-        floatPrecision: 2
-      }
-    }
-  ]
+        // Remove Vectornator stuff
+        {
+            name: 'removeAttrs',
+            params: {
+                attrs: [
+                    'svg:xmlns:vectornator',
+                    'xmlns:vectornator',
+                    'vectornator:.*',
+                ],
+            },
+        },
+        // Remove width + height attributes
+        'removeDimensions',
+        // Remove all fills
+        {
+            name: 'removeAttrs',
+            params: {
+                attrs: ['fill'],
+            },
+        },
+        // Enforce fill=currentColor at root <svg>
+        {
+            name: 'addAttributesToSVGElement',
+            params: {
+                attributes: [{ fill: 'currentColor' }],
+            },
+        },
+        'removeEditorsNSData',
+    ],
 };

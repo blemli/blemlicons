@@ -39,3 +39,13 @@ This checks:
 - use `currentColor` for stroke/fill
 - no inline width/height attributes
 
+## Create new icons
+Make sure your icon
+- is 24px × 24px 
+- has ~2 px padding on all sides 
+  Weird shapes (not round or rectangular) may, at some positions, go a little closer to the edge
+
+Then:
+1. Add your SVG to the `icons` folder
+2. Run `npm run validate` to check it
+3. if necessary, either manually fix or run `npm run fix`
