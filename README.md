@@ -15,12 +15,12 @@ Import or reference icons directly.
 
 Example (HTML)
 ```html
-<img src="/node_modules/blemlicons/icons/check.svg" alt="" width="24" height="24" />
+<img src="/node_modules/blemlicons/icons/problemli.svg" alt="" width="24" height="24" />
 ```
 
 Bundler (e.g. Vite/Next)
 ```js
-import check from "blemlicons/icons/check.svg";
+import check from "blemlicons/icons/problemli.svg";
 
 <img src={check} alt="" />
 ```
@@ -51,7 +51,7 @@ Then:
 3. if necessary, either manually fix or run `npm run fix`
 4. commit and push
 5. publish
-  ```bash
+    ```bash
     npm version patch
     npm publish --access public
-  ```
+    ```
