@@ -1,0 +1,39 @@
+{
+  "name": "blemlicons",
+  "version": "0.2.0",
+  "description": "Crisp SVG icon set by Problemli",
+  "license": "UNLICENSED",
+  "author": "Problemli",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blemli/blemlicons.git"
+  },
+  "homepage": "https://github.com/blemli/blemlicons#readme",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./icons/",
+    "./icons/*": "./icons/*"
+  },
+  "files": [
+    "icons",
+    "LICENSE",
+    "README.md",
+    "svgo.config.js"
+  ],
+  "scripts": {
+    "svgo": "svgo -f icons --config=svgo.config.cjs",
+    "validate": "node validate.js",
+    "fix": "npm run svgo && npm run validate"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "blemlicons",
+    "blemli",
+    "assets"
+  ],
+  "dependencies": {
+    "svgo": "^4.0.0"
+  }
+}
