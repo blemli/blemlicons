@@ -49,3 +49,9 @@ Then:
 1. Add your SVG to the `icons` folder
 2. Run `npm run validate` to check it
 3. if necessary, either manually fix or run `npm run fix`
+4. commit and push
+5. publish
+  ```bash
+    npm version patch
+    npm publish --access public
+  ```
